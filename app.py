@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Needed for flash messages
+app.secret_key = 'your_secret_key'
 
 @app.route('/')
 def index():
@@ -21,10 +21,10 @@ def rezervacija():
         vehicle_brand = request.form['vehicleBrand']
         name = request.form['name']
         email = request.form['email']
-                
+
         flash('Reservation submitted successfully!', 'success')
         return redirect(url_for('rezervacija'))
-        
+
     return render_template('rezervacija.html')
 
 if __name__ == "__main__":

@@ -35,11 +35,60 @@ document.addEventListener("DOMContentLoaded", () => {
         vehicleBrandSelect.disabled = true;
     });
 
-    // Mobile menu toggle
     const menuIcon = document.querySelector(".menu-icon");
     const navLinks = document.querySelector(".nav-links");
 
     menuIcon.addEventListener("click", () => {
         navLinks.classList.toggle("active");
+    });
+
+    const vehicleRentals = {
+        automobil: 50,
+        motor: 30,
+        kombij: 20
+    };
+
+    const brandPercentages = {
+        Hyundai: 20,
+        Volkswagen: 30,
+        Ford: 25,
+        BMW: 15,
+        Audi: 10
+    };
+
+    const ctxBar = document.getElementById('vehicleTypeChart').getContext('2d');
+    new Chart(ctxBar, {
+        type: 'bar',
+        data: {
+            labels: Object.keys(vehicleRentals),
+            datasets: [{
+                label: 'Number of Rentals',
+                data: Object.values(vehicleRentals),
+                backgroundColor: ['#ff6347', '#36a2eb', '#ffce56']
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    const ctxPie = document.getElementById('brandPercentageChart').getContext('2d');
+    new Chart(ctxPie, {
+        type: 'pie',
+        data: {
+            labels: Object.keys(brandPercentages),
+            datasets: [{
+                data: Object.values(brandPercentages),
+                backgroundColor: ['#ff6347', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff']
+            }]
+        },
+        options: {
+            responsive: true
+        }
     });
 });

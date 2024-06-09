@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sustav za najam vozila - o nama</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -15,8 +16,8 @@
         <nav>
             <div class="logo">CAR<span>RENTAL</span></div>
             <ul class="nav-links">
-                <li><a href="index.html">POČETNA</a></li>
-                <li><a href="rezervacija.html">NAJAM</a></li>
+                <li><a href="{{ url_for('index') }}">POČETNA</a></li>
+                <li><a href="{{ url_for('rezervacija') }}">NAJAM</a></li>
             </ul>
             <div class="menu-icon">
                 <i class="fas fa-bars"></i>
@@ -35,8 +36,20 @@
                     nudimo širok asortiman vozila po povoljnim cijenama. Naš cilj je pružiti vam izvrsnu uslugu i
                     osigurati da svaki najam bude jednostavan i bez stresa.</p>
             </section>
+            <section class="about-section">
+                <h2>Statistika Najma</h2>
+                <canvas id="vehicleTypeChart" width="400" height="200"></canvas>
+                <canvas id="brandPercentageChart" width="400" height="200"></canvas>
+            </section>
+            <section class="about-section">
+                <p>Our vehicle rental system allows you to easily select the type of vehicle you need, choose from
+                    various trusted brands, and specify your rental period. With a user-friendly interface and a
+                    commitment to customer satisfaction, we strive to make your vehicle rental experience seamless and
+                    enjoyable. Join us and explore a wide range of vehicles tailored to your needs.</p>
+            </section>
         </main>
     </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 
 </html>

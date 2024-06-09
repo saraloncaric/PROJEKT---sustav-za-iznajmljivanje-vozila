@@ -1,3 +1,4 @@
+/* Existing styles */
 * {
     margin: 0;
     padding: 0;
@@ -30,7 +31,6 @@ body {
 .top-nav {
     width: 100%;
     padding: 10px 0;
-
     position: fixed;
     top: 0;
     left: 0;
@@ -100,123 +100,32 @@ nav {
     margin-bottom: 10px;
 }
 
-.header-content p {
-    font-size: 1.2em;
+.about-section {
+    margin-bottom: 40px;
 }
 
-.home-description,
-.about-section,
-.form-section {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.home-description h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-.home-description p,
-.about-section p {
-    font-size: 1.1em;
-    line-height: 1.6;
-}
-
-.form-section form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.form-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.form-group {
-    flex: 1;
-    min-width: 200px;
-    text-align: left;
-}
-
-.form-group label {
-    display: block;
-    font-size: 1em;
-    margin-bottom: 5px;
-}
-
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    font-size: 1em;
-}
-
-.button-row {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-.button-row button {
-    padding: 10px 20px;
-    font-size: 1em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.button-row button i {
-    margin-right: 5px;
-}
-
-.button-row button[type="submit"] {
-    background: #28a745;
-    color: #fff;
-}
-
-.button-row button[type="submit"]:hover {
-    background: #218838;
-}
-
-.button-row button[type="button"] {
-    background: #dc3545;
-    color: #fff;
-}
-
-.button-row button[type="button"]:hover {
-    background: #c82333;
-}
-
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .menu-icon {
         display: block;
     }
 
     .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        background: rgba(0, 0, 0, 0.8);
         position: absolute;
-        top: 50px;
-        right: 0;
+        top: 60px;
+        right: -200px;
         width: 200px;
-        padding: 10px;
-    }
-
-    .nav-links li a {
-        font-size: 1.2em;
+        background: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        transition: right 0.3s ease;
     }
 
     .nav-links.active {
-        display: flex;
+        right: 0;
+    }
+
+    .nav-links li {
+        margin-bottom: 10px;
     }
 }
