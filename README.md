@@ -13,10 +13,10 @@ Tema projekta je sustav za iznajmljivanje vozila. Omogućiti će odabir tipa voz
 
 
 ## Kako pokrenuti projekt (docker)
-      #  Instalirati Docker Desktop aplikaciju
-      #  Preuzeti sve datoteke sa GitHub-a i ih u mapu
-      #  Otvoriti mapu u Studio Visual Code-u
-      #  U terminalu upisati naredbu: docker compose -f compose.yml up --build kako bismo otvorili u pregledniku
+      -  Instalirati Docker Desktop aplikaciju
+      -  Preuzeti sve datoteke sa GitHub-a i ih u mapu
+      -  Otvoriti mapu u Studio Visual Code-u
+      -  U terminalu upisati naredbu: docker compose -f compose.yml up --build kako bismo otvorili u pregledniku
 
 ```
 git clone [https://github.com/saraloncaric/PROJEKT---sustav-za-iznajmljivanje-vozila.git]
