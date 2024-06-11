@@ -1,5 +1,4 @@
 import sqlite3
-
 import click 
 from flask import current_app, g
 
@@ -31,3 +30,24 @@ def close_db(e=None):
 def init_app(app):
     app.teardown_appcontext(close_db)
     app.cli.add_command(init_db_command)
+
+def execute_query(query, args=(), one=False):
+    cur = get_db().execute(query, args)
+    rv = cur.fetchall()
+    cur.close()
+    return (rv[0] if rv else None) if one else rv
+
+def insert_data(query, args=()):
+    db = get_db()
+    db.execute(query, args)
+    db.commit()
+
+def update_data(query, args=()):
+    db = get_db()
+    db.execute(query, args)
+    db.commit()
+
+def delete_data(query, args=()):
+    db = get_db()
+    db.execute(query, args)
+    db.commit()
