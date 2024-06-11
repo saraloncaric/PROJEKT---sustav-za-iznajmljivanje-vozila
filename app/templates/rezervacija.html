@@ -1,77 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sustav za najam vozila - rezervacija</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
-  </head>
 
-  <body>
-    <div class="background-image"></div>
-    <div class="top-nav">
-      <nav>
-        <div class="logo">CAR<span>RENTAL</span></div>
-        <ul class="nav-links">
-          <li><a href="/">POČETNA</a></li>
-          <li><a href="about">O NAMA</a></li>
-        </ul>
-        <div class="menu-icon">
-          <i class="fas fa-bars"></i>
-        </div>
-      </nav>
-    </div>
-    <div class="container">
-      <header>
-        <div class="header-content">
-          <h1>Rezervacija Vozila</h1>
-        </div>
-      </header>
-      <main>
-        <section class="about-section">
-          <form id="rentalForm">
-            <div class="form-row">
-              <label for="vehicle">Odaberi vozilo:</label>
-              <select id="vehicle" name="vehicle">
-                <option value="car">Automobil</option>
-                <option value="van">Kombi</option>
-                <option value="motorcycle">Motor</option>
-              </select>
-            </div>
-            <div class="form-row">
-              <label for="location">Lokacija:</label>
-              <input type="text" id="location" name="location" required />
-            </div>
-            <div class="form-row">
-              <label for="startDate">Početak najma:</label>
-              <input type="date" id="startDate" name="startDate" required />
-            </div>
-            <div class="form-row">
-              <label for="endDate">Kraj najma:</label>
-              <input type="date" id="endDate" name="endDate" required />
-            </div>
-            <div class="form-row">
-              <label for="personalData">Osobni podaci:</label>
-              <textarea
-                id="personalData"
-                name="personalData"
-                required
-              ></textarea>
-            </div>
-            <div class="form-row">
-              <button type="submit">Rezerviraj</button>
-            </div>
-          </form>
-        </section>
-      </main>
-    </div>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sustav za najam vozila - rezervacija</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+</head>
+
+<body>
+  <div class="background-image"></div>
+  <div class="top-nav">
+    <nav>
+      <div class="logo">CAR<span>RENTAL</span></div>
+      <ul class="nav-links">
+        <li><a href="/">POČETNA</a></li>
+        <li><a href="about">O NAMA</a></li>
+      </ul>
+      <div class="menu-icon">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <h1>Rezervacija vozila</h1>
+      </div>
+    </header>
+    <main>
+      <section class="about-section">
+        <form id="rentalForm">
+          <div class="form-row">
+            <label for="vehicleType">Odaberi vozilo:</label>
+            <select id="vehicleType" name="vehicleType">
+              <option value="">-</option>
+              <option value="automobil">Automobil</option>
+              <option value="motor">Motor</option>
+              <option value="kombi">Kombi</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="vehicleBrands">Odaberi marku vozila:</label>
+            <select id="vehicleBrands" name="vehicleBrands" disabled>
+              <option value=""></option>
+            </select>
+          </div>
+          <div class="form-row full-width">
+            <label for="location">Lokacija:</label>
+            <input type="text" id="location" name="location" placeholder="Upiši grad" required />
+          </div>
+          <div class="form-row">
+            <label for="startDate">Početak najma:</label>
+            <input type="date" id="startDate" name="startDate" required />
+          </div>
+          <div class="form-row">
+            <label for="endDate">Kraj najma:</label>
+            <input type="date" id="endDate" name="endDate" required />
+          </div>
+          <div class="form-row full-width">
+            <label for="personalData">Osobni podaci:</label>
+            <input type="text" id="name" name="namesurname" placeholder="Upiši ime i prezime" required />
+            <input type="email" id="email" name="email" placeholder="Upiši email" required />
+          </div>
+          <div class="button-row">
+            <button type="submit">Rezerviraj</button>
+            <button type="button" id="cancelButton">Otkaži</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
 </html>

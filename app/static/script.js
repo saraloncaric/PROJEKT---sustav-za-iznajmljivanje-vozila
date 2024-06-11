@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     const vehicleTypeSelect = document.getElementById("vehicleType");
-    const vehicleBrandSelect = document.getElementById("vehicleBrand");
+    const vehicleBrandSelect = document.getElementById("vehicleBrands"); // Corrected ID
 
     const vehicleBrands = {
         automobil: ['Hyundai', 'Volkswagen', 'Ford', 'BMW', 'Audi'],
         motor: ['Yamaha', 'Suzuki', 'Kawasaki', 'Ducati', 'Aprilia'],
-        kombij: ['Cirtoën', 'Ford', 'Volkswagen', 'Opel', 'Mercedes-Benz']
+        kombi: ['Citroën', 'Ford', 'Volkswagen', 'Opel', 'Mercedes-Benz']
     };
 
     vehicleTypeSelect.addEventListener("change", (event) => {
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const vehicleRentals = {
         automobil: 50,
         motor: 30,
-        kombij: 20
+        kombi: 20
     };
 
     const brandPercentages = {

@@ -1,66 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sustav za najam vozila - o nama</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  </head>
 
-  <body>
-    <div class="background-image"></div>
-    <div class="top-nav">
-      <nav>
-        <div class="logo">CAR<span>RENTAL</span></div>
-        <ul class="nav-links">
-          <li><a href="/">POČETNA</a></li>
-          <li><a href="rezervacija">NAJAM</a></li>
-        </ul>
-        <div class="menu-icon">
-          <i class="fas fa-bars"></i>
-        </div>
-      </nav>
-    </div>
-    <div class="container">
-      <header>
-        <div class="header-content">
-          <h1>O Nama</h1>
-        </div>
-      </header>
-      <main>
-        <section class="about-section">
-          <p>
-            Dobrodošli u CarRental, vašu pouzdanu tvrtku za najam vozila. S
-            dugogodišnjim iskustvom u industriji, nudimo širok asortiman vozila
-            po povoljnim cijenama. Naš cilj je pružiti vam izvrsnu uslugu i
-            osigurati da svaki najam bude jednostavan i bez stresa.
-          </p>
-        </section>
-        <section class="about-section">
-          <h2>Statistika Najma</h2>
-          <canvas id="vehicleTypeChart" width="400" height="200"></canvas>
-          <canvas id="brandPercentageChart" width="400" height="200"></canvas>
-        </section>
-        <section class="about-section">
-          <p>
-            Our vehicle rental system allows you to easily select the type of
-            vehicle you need, choose from various trusted brands, and specify
-            your rental period. With a user-friendly interface and a commitment
-            to customer satisfaction, we strive to make your vehicle rental
-            experience seamless and enjoyable. Join us and explore a wide range
-            of vehicles tailored to your needs.
-          </p>
-        </section>
-      </main>
-    </div>
-    <script src="{{ url_for('static', filename='script.js') }}}"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sustav za najam vozila - o nama</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div class="background-image"></div>
+  <div class="top-nav">
+    <nav>
+      <div class="logo">CAR<span>RENTAL</span></div>
+      <ul class="nav-links">
+        <li><a href="/">POČETNA</a></li>
+        <li><a href="rezervacija">NAJAM</a></li>
+      </ul>
+      <div class="menu-icon">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <h1>O Nama</h1>
+      </div>
+    </header>
+    <main>
+      <section class="about-section">
+        <p>
+          Dobrodošli u CarRental, vašu pouzdanu tvrtku za najam vozila. S
+          dugogodišnjim iskustvom u industriji, nudimo širok asortiman vozila
+          po povoljnim cijenama. Naš cilj je pružiti vam izvrsnu uslugu i
+          osigurati da svaki najam bude jednostavan i bez stresa.
+        </p>
+      </section>
+      <section class="about-section">
+        <h2>Statistika Najma</h2>
+        <canvas id="vehicleTypeChart" width="400" height="200"></canvas>
+        <canvas id="brandPercentageChart" width="400" height="200"></canvas>
+      </section>
+      <section class="about-section">
+        <p>
+          Naš sustav iznajmljivanja vozila omogućuje vam da jednostavno odaberete vrstu vozila koja vam je potrebna,
+          odaberete među različitim markama od povjerenja i odredite svoje razdoblje najma. Uz korisničko sučelje i
+          posvećenost zadovoljstvu kupaca, nastojimo učiniti vaše iskustvo najma vozila besprijekornim i ugodnim.
+          Pridružite nam se i istražite široku ponudu vozila prilagođenih vašim potrebama.
+        </p>
+      </section>
+    </main>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}}"></script>
+</body>
+
 </html>
