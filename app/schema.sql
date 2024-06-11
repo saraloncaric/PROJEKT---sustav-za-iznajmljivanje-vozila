@@ -3,22 +3,17 @@ DROP TABLE IF EXISTS post;
 
 CREATE TABLE user (
 	id INTEGER PRIMARY KEY AUTO_INCREMENT,
-    username TEXT UNIQUE NOT NULL,
-    password TEXT NOT NULL
+    name TEXT UNIQUE NOT NULL,
+    email TEXT UNIQUE NOT NULL
 );
 CREATE TABLE post (
 	id INTEGER PRIMARY KEY AUTO_INCREMENT,
     author_id INTEGER NOT NULL,
-	author_name TEXT NOT NULL,
-	created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	title TEXT UNIQUE NOT NULL,
-	body TEXT NOT NULL,
-	updated TIMESTAMP,
-	body2 TEXT,
-	body3 TEXT,
-	body4 TEXT,
-	body5 TEXT,
-	body6 TEXT,
-	body7 TEXT,
-	FOREIGN KEY (author_id) REFERENCES user (id)
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    vehicle TEXT NOT NULL,
+    vehicle_brand TEXT NOT NULL,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    location TEXT NOT NULL,
+    FOREIGN KEY (author_id) REFERENCES user (id)
 );
