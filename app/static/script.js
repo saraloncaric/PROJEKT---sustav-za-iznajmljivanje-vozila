@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
         data: {
             labels: Object.keys(vehicleRentals),
             datasets: [{
-                label: 'Number of Rentals',
+                label: 'Broj iznajmljivanja',
                 data: Object.values(vehicleRentals),
                 backgroundColor: ['#ff6347', '#36a2eb', '#ffce56']
             }]
