@@ -23,7 +23,7 @@ def create_app(test_config=None):
     from . import db
     db.init_app(app)
 
-    from .blueprints import reservation
+    from .reservation import bp as reservation_bp
     app.register_blueprint(reservation.bp)
 
     return app

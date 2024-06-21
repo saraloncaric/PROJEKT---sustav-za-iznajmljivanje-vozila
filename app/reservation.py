@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from db import get_db
 
-db = Blueprint('reservation', __name__, url_prefix='/reservation')
+bp = Blueprint('reservation', __name__, url_prefix='/reservation')
 
 @bp.route('/', methods=['GET', 'POST'])
 def rezervacija():
@@ -22,7 +22,7 @@ def rezervacija():
         )
         db.commit()
 
-        flash('Reservation submitted successfully!', 'success')
+        flash('Rezervacija uspješna!', 'success')
         return redirect(url_for('reservation.rezervacija'))
 
     return render_template('rezervacija.html')
