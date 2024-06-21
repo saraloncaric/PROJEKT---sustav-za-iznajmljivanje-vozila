@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const vehicleTypeSelect = document.getElementById("vehicleType");
-    const vehicleBrandSelect = document.getElementById("vehicleBrands"); // Corrected ID
+    const vehicleBrandSelect = document.getElementById("vehicleBrands");
 
     const vehicleBrands = {
         automobil: ['Hyundai', 'Volkswagen', 'Ford', 'BMW', 'Audi'],
@@ -56,39 +56,47 @@ document.addEventListener("DOMContentLoaded", () => {
         Audi: 10
     };
 
-    const ctxBar = document.getElementById('vehicleTypeChart').getContext('2d');
-    new Chart(ctxBar, {
-        type: 'bar',
-        data: {
-            labels: Object.keys(vehicleRentals),
-            datasets: [{
-                label: 'Broj iznajmljivanja',
-                data: Object.values(vehicleRentals),
-                backgroundColor: ['#ff6347', '#36a2eb', '#ffce56']
-            }]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
+    const ctxBar = document.getElementById('vehicleTypeChart')?.getContext('2d');
+    if (!ctxBar) {
+        console.error('Failed to get 2D context for vehicleTypeChart');
+    } else {
+        new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: Object.keys(vehicleRentals),
+                datasets: [{
+                    label: 'Broj iznajmljivanja',
+                    data: Object.values(vehicleRentals),
+                    backgroundColor: ['#ff6347', '#36a2eb', '#ffce56']
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    });
+        });
+    }
 
-    const ctxPie = document.getElementById('brandPercentageChart').getContext('2d');
-    new Chart(ctxPie, {
-        type: 'pie',
-        data: {
-            labels: Object.keys(brandPercentages),
-            datasets: [{
-                data: Object.values(brandPercentages),
-                backgroundColor: ['#ff6347', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff']
-            }]
-        },
-        options: {
-            responsive: true
-        }
-    });
+    const ctxPie = document.getElementById('brandPercentageChart')?.getContext('2d');
+    if (!ctxPie) {
+        console.error('Failed to get 2D context for brandPercentageChart');
+    } else {
+        new Chart(ctxPie, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(brandPercentages),
+                datasets: [{
+                    data: Object.values(brandPercentages),
+                    backgroundColor: ['#ff6347', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff']
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    }
 });

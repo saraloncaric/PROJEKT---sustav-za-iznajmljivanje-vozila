@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from db import get_db, init_db_command, init_app
-from app.reservation import bp as reservation_bp
+from reservation import bp as reservation_bp
 
 
 app = Flask(__name__)

@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from db import get_db
 
-bp = Blueprint('reservation', __name__, url_prefix='/reservation')
+bp = Blueprint('reservation', __name__, url_prefix='/rezervacija')
 
 @bp.route('/', methods=['GET', 'POST'])
 def rezervacija():
