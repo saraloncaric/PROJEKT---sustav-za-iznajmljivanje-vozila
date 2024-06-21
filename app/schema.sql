@@ -1,19 +1,12 @@
-DROP TABLE IF EXISTS user;
-DROP TABLE IF EXISTS post;
+DROP TABLE IF EXISTS reservations;
 
-CREATE TABLE user (
+CREATE TABLE reservations (
 	id INTEGER PRIMARY KEY AUTO_INCREMENT,
-    name TEXT UNIQUE NOT NULL,
-    email TEXT UNIQUE NOT NULL
-);
-CREATE TABLE post (
-	id INTEGER PRIMARY KEY AUTO_INCREMENT,
-    author_id INTEGER NOT NULL,
-    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    vehicle TEXT NOT NULL,
-    vehicle_brand TEXT NOT NULL,
+    vehicle_type VARCHAR(30) NOT NULL,
+    vehicle_brand VARCHAR(60) NOT NULL,
     start_date DATE NOT NULL,
     end_date DATE NOT NULL,
-    location TEXT NOT NULL,
-    FOREIGN KEY (author_id) REFERENCES user (id)
+    name VARCHAR(60) NOT NULL,
+    email VARCHAR(60) NOT NULL,
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
