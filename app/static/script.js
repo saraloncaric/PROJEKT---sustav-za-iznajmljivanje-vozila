@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         kombi: ['Citroën', 'Ford', 'Volkswagen', 'Opel', 'Mercedes-Benz']
     };
 
-    vehicleTypeSelect.addEventListener("change", (event) => {
+    vehicleTypeSelect?.addEventListener("change", (event) => {
         const selectedType = event.target.value;
 
         while (vehicleBrandSelect.options.length > 1) {
@@ -30,15 +30,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const cancelButton = document.getElementById("cancelButton");
-    cancelButton.addEventListener("click", () => {
-        document.getElementById("rentalForm").reset();
+    cancelButton?.addEventListener("click", () => {
+        document.getElementById("rentalForm")?.reset();
         vehicleBrandSelect.disabled = true;
     });
 
     const menuIcon = document.querySelector(".menu-icon");
     const navLinks = document.querySelector(".nav-links");
 
-    menuIcon.addEventListener("click", () => {
+    menuIcon?.addEventListener("click", () => {
         navLinks.classList.toggle("active");
     });
 

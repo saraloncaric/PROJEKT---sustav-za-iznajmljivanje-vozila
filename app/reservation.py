@@ -26,3 +26,7 @@ def rezervacija():
         return redirect(url_for('reservation.rezervacija'))
 
     return render_template('rezervacija.html')
+
+@bp.route('/about')
+def about():
+    return render_template('about.html')
