@@ -59,7 +59,7 @@ def update(id):
 
     return render_template('update.html', reservation=reservation)
 
-@bp.route('/delete/<int:id>', methods=['POST'])
+@bp.route('/delete/<int:id>', methods=['DELETE'])
 def delete(id):
     db = get_db()
     db.execute('DELETE FROM reservations WHERE id = ?', (id,))

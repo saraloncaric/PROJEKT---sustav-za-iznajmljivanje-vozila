@@ -17,5 +17,17 @@ def index():
 def about():
     return render_template('about.html')
 
+@app.route('/rezervacija')
+def rezervacija():
+    return render_template('rezervacija.html')
+
+@app.route('/list')
+def list():
+    return render_template('list.html')
+
+@app.route('/update')
+def update():
+    return render_template('update.html')
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
