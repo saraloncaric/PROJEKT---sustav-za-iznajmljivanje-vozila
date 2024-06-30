@@ -95,7 +95,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 }]
             },
             options: {
-                responsive: true
+                responsive: true,
+                maintainAspectRatio: false
             }
         });
     }
