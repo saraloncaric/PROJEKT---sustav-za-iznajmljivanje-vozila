@@ -24,6 +24,6 @@ def create_app(test_config=None):
     db.init_app(app)
 
     from .reservation import bp as reservation_bp
-    app.register_blueprint(reservation.bp)
+    app.register_blueprint(reservation_bp)
 
     return app

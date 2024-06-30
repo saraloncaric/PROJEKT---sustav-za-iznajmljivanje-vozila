@@ -1,12 +1,11 @@
 DROP TABLE IF EXISTS reservations;
 
 CREATE TABLE reservations (
-	id INTEGER PRIMARY KEY AUTO_INCREMENT,
-    vehicle_type VARCHAR(30) NOT NULL,
-    vehicle_brand VARCHAR(60) NOT NULL,
-    start_date DATE NOT NULL,
-    end_date DATE NOT NULL,
-    name VARCHAR(60) NOT NULL,
-    email VARCHAR(60) NOT NULL,
-    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    vehicle_type TEXT NOT NULL,
+    vehicle_brand TEXT NOT NULL,
+    start_date TEXT NOT NULL,
+    end_date TEXT NOT NULL,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL
 );

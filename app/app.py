@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from db import get_db, init_db_command, init_app
 from reservation import bp as reservation_bp
+from __init__ import create_app
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
